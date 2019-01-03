@@ -1,4 +1,4 @@
-## Install Vault cli by
+**Install Vault cli by**
 
 ```
 
@@ -6,38 +6,38 @@ https://releases.hashicorp.com/vault/1.0.1/vault_1.0.1_linux_amd64.zip
 
 ```
 
-## To unzip the file
+**To unzip the file**
 
 ```
 
- unzip the file
+unzip the file
 
 ```
 
-* To set VAULT_ADDR env variable by run the following command
+**To set VAULT_ADDR env variable by run the following command**
 
 ```
 
 export VAULT_ADDR=https://localhost:8200
 
 ```
-## create an approle
+**create an approle**
 
 * For creating approle first we have to write a policy and attach that policy to the role.
 
-      * example create a policy file as token-policy.hcl
+ * example create a policy file as token-policy.hcl
  
-           ```
-            path "secret/K8sToken" {
-            capabilities = ["create", "read", "list", "update"]
-                }
-           ```
-## To create a policy by
+ ```
+ path "secret/K8sToken" {
+ capabilities = ["create", "read", "list", "update"]
+ }
+ ```
+**To create a policy by**
   
-      ```
+```
       ./vault policy write k8stoken token-policy.hcl
       
-      ```
+```
 * To create a role in Vault and associate the policy with that role
 
      ```
